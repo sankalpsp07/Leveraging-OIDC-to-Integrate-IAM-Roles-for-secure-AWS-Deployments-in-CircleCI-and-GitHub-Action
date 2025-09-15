@@ -11,7 +11,7 @@ jobs:
     steps:
       - checkout
       - aws-cli/setup:
-          role-arn: "arn:aws:iam::586794485514:role/iam-role-for-circle-ci"
+          role-arn: "arn:aws:iam::586794485514:role/iam-role-for-circleci"
           aws-region: AWS_REGION   
       - run:
           name: Check if S3 bucket is accessible
