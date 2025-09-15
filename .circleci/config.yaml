@@ -1,0 +1,24 @@
+version: 2.1
+orbs:
+  aws-cli: circleci/aws-cli@3.1.5
+
+jobs:
+  deploy:
+    docker:
+      - image: cimg/aws:2023.06
+    environment:
+      AWS_REGION: us-east-1
+    steps:
+      - checkout
+      - aws-cli/setup:
+          role-arn: "arn:aws:iam::586794485514:role/iam-role-for-circle-ci"
+          aws-region: ${AWS_REGION}
+      - run:
+          name: Check if S3 bucket is accessible. 
+          command: aws s3 ls 
+
+          #further deployment steps go here. 
+
+
+          
+
