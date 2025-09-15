@@ -15,10 +15,10 @@ jobs:
           aws-region: ${AWS_REGION}
       - run:
           name: Check if S3 bucket is accessible
-          command: aws s3 ls 
+          command: aws s3 ls
+      # further deployment steps go here
 
-          #further deployment steps go here. 
-
-
-
-
+workflows:
+  deploy_workflow: 
+    jobs:
+      - deploy
