@@ -14,11 +14,11 @@ jobs:
           role-arn: "arn:aws:iam::586794485514:role/iam-role-for-circle-ci"
           aws-region: ${AWS_REGION}
       - run:
-          name: Check if S3 bucket is accessible. 
+          name: Check if S3 bucket is accessible
           command: aws s3 ls 
 
           #further deployment steps go here. 
 
 
-          
+
 
