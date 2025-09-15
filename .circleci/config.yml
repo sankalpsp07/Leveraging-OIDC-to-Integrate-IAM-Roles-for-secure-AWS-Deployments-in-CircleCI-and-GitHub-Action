@@ -12,13 +12,13 @@ jobs:
       - checkout
       - aws-cli/setup:
           role-arn: "arn:aws:iam::586794485514:role/iam-role-for-circle-ci"
-          aws-region: ${AWS_REGION}
+          aws-region: AWS_REGION   # 👈 just pass the env var name
       - run:
           name: Check if S3 bucket is accessible
-          command: aws s3 ls 
+          command: aws s3 ls
+      # further deployment steps go here
 
-          #further deployment steps go here. 
-
-
-
-
+workflows:
+  deploy_workflow:
+    jobs:
+      - deploy
